@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{ac12ed93-15e7-4598-abbc-5bb4c7de8b1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\windows">
+      <UniqueIdentifier>{5fc8fa0c-087b-445e-89b8-e0fbf2756152}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\windows">
+      <UniqueIdentifier>{f90e26cc-3064-48dd-8410-73a02dcb9747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\util">
+      <UniqueIdentifier>{9af2b1dd-0962-4cb8-bf2e-d1793b05c37e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\threading">
+      <UniqueIdentifier>{c407a8ae-c1ac-4c33-95c8-f93e878c854d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\util">
+      <UniqueIdentifier>{4b84e460-81e3-4443-b47e-ed6b85969fc0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="../src/RawHTTP.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\windows\WindowsTCPSocket.cpp">
+      <Filter>src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\windows\WinSockManager.cpp">
+      <Filter>src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\windows\WindowsTCPListener.cpp">
+      <Filter>src\windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\RawHTTP\IHttpHeader.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\ITCPSocket.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\IServer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\ITcpListener.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\Types.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\windows\WindowsTCPSocket.h">
+      <Filter>include\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\windows\WindowsTCPListener.h">
+      <Filter>include\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\util\NoCopy.h">
+      <Filter>include\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\threading\IEventLoop.h">
+      <Filter>include\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\threading\IEvent.h">
+      <Filter>include\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\threading\EventData.h">
+      <Filter>include\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\windows\WinSockManager.h">
+      <Filter>src\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHttp\util\Singleton.h">
+      <Filter>include\util</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
