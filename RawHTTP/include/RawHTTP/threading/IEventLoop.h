@@ -22,6 +22,7 @@ public:
   virtual void Run() = 0;
   //! Terminates the loop. Stricter termination mode can override previous rest strict call, but not the other way around. Returns current termination mode
   virtual TerminationMode Terminate(TerminationMode mode) = 0;
+  //! Adds a task to be executed to the event loop
 
 protected:
 

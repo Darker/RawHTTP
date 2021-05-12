@@ -3,9 +3,9 @@
 #include <sstream>
 #include <array>
 
-//#include <RawHttp/Types.h>
-#include "../RawHTTP/include/RawHTTP/Windows/WindowsTCPListener.h"
-#include "../RawHTTP/include/RawHTTP/ITCPSocket.h"
+#include <RawHttp/Types.h>
+#include <RawHttp/Windows/WindowsTCPListener.h>
+#include <RawHttp/ITCPSocket.h>
 
 const char* reply = R"D(HTTP/2 200 OK
 date: Sat, 17 Apr 2021 09:45:34 GMT

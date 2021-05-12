@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="OutputBuildMacro" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<!--
+  <PropertyGroup>
+    <ProjectToImport>..\RawHTTPTest\RawHTTPTest.vcxproj</ProjectToImport>
+  </PropertyGroup>-->
+  <!--<Import Project="$(ProjectToImport)" />
+  <Target Name="OutputBuildMacro">
+    <PropertyGroup>
+      <PropertyToGet>MSBuildProjectFile</PropertyToGet>
+      <MacroName>$([MSBuild]::Escape('$('))$(PropertyToGet))</MacroName>
+    </PropertyGroup><!- - $([MSBuild]::Unescape('$(MacroName)'))- ->
+    <Message Text="$([MSBuild]::Unescape('$(MacroName)'))" />
+  </Target>
+
+   PropertyName="'$(PropertyToGet)'"
+   <PropertyName ParameterType="System.String" Required="true" />
+-->
+<UsingTask TaskName="GetPropertyTask" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v12.0.dll">
+    <ParameterGroup>
+      <ProjectFile ParameterType="System.String" Required="true" />
+      <PropertyName ParameterType="System.String" Required="true" />
+      <Result ParameterType="System.String" Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Reference Include="System.Xml"/>
+      <Reference Include="Microsoft.Build"/>
+      <Using Namespace="Microsoft.Build" />
+      <Using Namespace="Microsoft.Build.Evaluation" />
+      <Using Namespace="Microsoft.Build.Utilities" />
+      <Code Type="Fragment" Language="cs">
+          <![CDATA[
+
+        var properties = new Dictionary<string, string>
+        {
+          { "Configuration", "Release" },
+          { "Platform", "x64" }
+        };
+        //Log.LogMessage(MessageImportance.High, "customLog");
+        //Log.LogMessage(MessageImportance.High, ProjectFile);
+        //Log.LogMessage(MessageImportance.High, PropertyName);
+        var collection = new ProjectCollection(properties);
+        var project = collection.LoadProject(ProjectFile);
+       ProjectProperty pp = project.Properties.Where(p => p.Name == PropertyName).FirstOrDefault();
+            string customValue = pp==null?"empty":pp.EvaluatedValue;
+       Result = customValue;
+       Log.LogMessage(MessageImportance.High, "PROPS["+PropertyName+"]="+Result);
+      ]]></Code>
+    </Task>
+  </UsingTask>
+  <Target Name="OutputBuildMacro">
+    <!--<PropertyGroup>
+      <PropertyToGet>OutputType</PropertyToGet>
+    </PropertyGroup>-->
+    <GetPropertyTask ProjectFile="$(ProjectToImport)" PropertyName="$(PropertyToGet)">
+      <Output ItemName="RequestedPropertyValue" TaskParameter="Result"/>
+    </GetPropertyTask>
+    <Message Text="Value: $(RequestedPropertyValue)" />
+  </Target>
+</Project>

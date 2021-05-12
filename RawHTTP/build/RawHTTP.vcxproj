@@ -202,6 +202,7 @@
     <ClInclude Include="..\include\RawHTTP\threading\EventData.h" />
     <ClInclude Include="..\include\RawHTTP\threading\IEvent.h" />
     <ClInclude Include="..\include\RawHTTP\threading\IEventLoop.h" />
+    <ClInclude Include="..\include\RawHTTP\threading\Task.h" />
     <ClInclude Include="..\include\RawHTTP\Types.h" />
     <ClInclude Include="..\include\RawHTTP\util\NoCopy.h" />
     <ClInclude Include="..\include\RawHTTP\windows\WindowsTCPListener.h" />
