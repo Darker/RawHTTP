@@ -17,7 +17,7 @@ expires: Sat, 17 Apr 2021 10:15:34 GMT
 <head><title>TEST</title></head><body>HTTP reply!</body>
 )D";
 
-int main()
+int ccrsmain()
 {
     std::cout << "Hello World!\n";
     RawHttp::WindowsTCPListener test({ RawHttp::IPAddress::Type::IPV4, {}, 8080 });
@@ -48,4 +48,5 @@ int main()
       });
     std::cout << "Listening on 127.0.0.1:8080" << std::endl;
     test.Start();
+    return 0;
 }

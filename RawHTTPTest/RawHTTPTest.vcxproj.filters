@@ -21,5 +21,11 @@
     <ClCompile Include="whatever.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IterableTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexedTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

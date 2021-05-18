@@ -33,6 +33,27 @@
     <Filter Include="src\util">
       <UniqueIdentifier>{4b84e460-81e3-4443-b47e-ed6b85969fc0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\threading">
+      <UniqueIdentifier>{bf907540-92aa-4fbe-a964-5c09681cb971}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\windows\threading">
+      <UniqueIdentifier>{04fc1e1a-fff1-402b-bebd-3da030594e38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\windows\threading">
+      <UniqueIdentifier>{f03c26e5-f9ed-4c82-8c7a-882c1533b7e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\abstract">
+      <UniqueIdentifier>{9c2c12f7-5919-4e4f-bbb2-4c6193a51b63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\abstract\containers">
+      <UniqueIdentifier>{1cb9bbd6-a25a-4dc4-b10a-85730acaf992}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\datatypes">
+      <UniqueIdentifier>{ebd9a2af-563f-4af4-aa9c-8141f5ac9841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\abstract\units">
+      <UniqueIdentifier>{b85ca783-35e9-4eaf-b7f4-c36629d7cbfc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="../src/RawHTTP.cpp">
@@ -46,6 +67,12 @@
     </ClCompile>
     <ClCompile Include="..\src\windows\WindowsTCPListener.cpp">
       <Filter>src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\windows\threading\WindowsEventLoop.cpp">
+      <Filter>src\windows\threading</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\windows\threading\WinEventWaitObject.cpp">
+      <Filter>src\windows\threading</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +114,36 @@
     </ClInclude>
     <ClInclude Include="..\include\RawHttp\util\Singleton.h">
       <Filter>include\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\threading\Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\windows\threading\WindowsEventLoop.h">
+      <Filter>include\windows\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\abstract\containers\Iterable.h">
+      <Filter>include\abstract\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\abstract\containers\IndexedCollection.h">
+      <Filter>include\abstract\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\datatypes\Time.h">
+      <Filter>include\datatypes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\threading\IWaitObject.h">
+      <Filter>include\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\abstract\units\Time.h">
+      <Filter>include\abstract\units</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\windows\threading\WinEventWaitObject.h">
+      <Filter>src\windows\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\abstract\containers\BasicIterator.h">
+      <Filter>include\abstract\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\datatypes\typedefs.h">
+      <Filter>include\datatypes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

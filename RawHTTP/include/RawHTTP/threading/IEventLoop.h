@@ -13,7 +13,9 @@ public:
     //! Finish tasks in the queue but do not accept new ones
     FinishTasks,
     //! Wait for the task queue to naturally become empty, accepting new tasks
-    Wait
+    Wait,
+    //! Does not terminate
+    NoTermination
   };
 
   virtual ~IEventLoop() = default;

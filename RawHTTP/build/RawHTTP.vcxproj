@@ -59,15 +59,19 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="WindowsDefines.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="WindowsDefines.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="WindowsDefines.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="WindowsDefines.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -190,11 +194,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="../src/RawHTTP.cpp" />
+    <ClCompile Include="..\src\windows\threading\WinEventWaitObject.cpp" />
+    <ClCompile Include="..\src\windows\threading\WindowsEventLoop.cpp" />
     <ClCompile Include="..\src\windows\WindowsTCPListener.cpp" />
     <ClCompile Include="..\src\windows\WindowsTCPSocket.cpp" />
     <ClCompile Include="..\src\windows\WinSockManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\RawHTTP\abstract\containers\BasicIterator.h" />
+    <ClInclude Include="..\include\RawHTTP\abstract\containers\IndexedCollection.h" />
+    <ClInclude Include="..\include\RawHTTP\abstract\containers\Iterable.h" />
+    <ClInclude Include="..\include\RawHTTP\abstract\units\Time.h" />
+    <ClInclude Include="..\include\RawHTTP\datatypes\Time.h" />
+    <ClInclude Include="..\include\RawHTTP\datatypes\typedefs.h" />
     <ClInclude Include="..\include\RawHTTP\IHttpHeader.h" />
     <ClInclude Include="..\include\RawHTTP\IServer.h" />
     <ClInclude Include="..\include\RawHTTP\ITcpListener.h" />
@@ -202,12 +214,15 @@
     <ClInclude Include="..\include\RawHTTP\threading\EventData.h" />
     <ClInclude Include="..\include\RawHTTP\threading\IEvent.h" />
     <ClInclude Include="..\include\RawHTTP\threading\IEventLoop.h" />
+    <ClInclude Include="..\include\RawHTTP\threading\IWaitObject.h" />
     <ClInclude Include="..\include\RawHTTP\threading\Task.h" />
+    <ClInclude Include="..\include\RawHTTP\windows\threading\WindowsEventLoop.h" />
     <ClInclude Include="..\include\RawHTTP\Types.h" />
     <ClInclude Include="..\include\RawHTTP\util\NoCopy.h" />
     <ClInclude Include="..\include\RawHTTP\windows\WindowsTCPListener.h" />
     <ClInclude Include="..\include\RawHTTP\windows\WindowsTCPSocket.h" />
     <ClInclude Include="..\include\RawHttp\util\Singleton.h" />
+    <ClInclude Include="..\src\windows\threading\WinEventWaitObject.h" />
     <ClInclude Include="..\src\windows\WinSockManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

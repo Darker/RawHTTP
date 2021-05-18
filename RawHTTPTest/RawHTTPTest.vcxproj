@@ -159,6 +159,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="IndexedTests.cpp" />
+    <ClCompile Include="IterableTests.cpp" />
     <ClCompile Include="RawHTTPTest.cpp" />
     <ClCompile Include="whatever.cpp" />
   </ItemGroup>
