@@ -201,6 +201,7 @@
     <ClCompile Include="..\src\windows\WinSockManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\RawHTTP\abstract\callbacks\ItemCallbacks.h" />
     <ClInclude Include="..\include\RawHTTP\abstract\containers\BasicIterator.h" />
     <ClInclude Include="..\include\RawHTTP\abstract\containers\IndexedCollection.h" />
     <ClInclude Include="..\include\RawHTTP\abstract\containers\Iterable.h" />

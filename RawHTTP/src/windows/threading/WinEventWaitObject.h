@@ -1,6 +1,6 @@
 #pragma once
-#include "abstract/containers/Iterable.h"
 #include "threading/IWaitObject.h"
+#include "datatypes/typedefs.h"
 
 #include "windows.h"
 
@@ -13,38 +13,20 @@ namespace RawHttp
 class WinEventWaitObject : public IWaitObject
 {
 public:
-  enum class WaitStatus
+  enum class WinWaitStatus : size_t
   {
     Timeout = WAIT_TIMEOUT,
     Failed = WAIT_FAILED,
     Success = WAIT_OBJECT_0,
     Abandoned = WAIT_ABANDONED_0,
   };
-  struct WaitResult
-  {
-    WaitStatus status;
-    HANDLE firstSignaledEvent = NULL;
-    size_t firstSignaledEventIndex = std::numeric_limits<size_t>::max();
-  };
 
-  template <class TIterable>
-  static bool Wait(IterableImpl<TIterable, WinEventWaitObject*> objects, bool all, int waitMsMax);
-  
-  virtual HANDLE GetEventHandle() const;
+  //! Wait for this and all given objects. These objects MUST be of the same type
+  virtual WaitResult WaitFor(const ArrayView<IWaitObject*, false>& objects, bool all, TimeInterval timeout, bool noExceptions = false);
+  //! Provides string object type. Object types with the same type are compatible and can wait within the same thread
+  virtual const char* GetType() const { return "windows-event"; }
+  virtual HANDLE GetEventHandle() const = 0;
 
-private:
-  static bool Wait(Iterable<WinEventWaitObject*>& objects, bool all, int waitMsMax);
 };
 
-template<class TIterable>
-bool WinEventWaitObject::Wait(IterableImpl<TIterable, WinEventWaitObject*> objects, bool all, int waitMsMax)
-{
-  //std::vector<HANDLE> handles;
-  //while (objects.HasNext())
-  //{
-  //  const WinEventWaitObject& obj = objects.Next();
-  //  handles.push_back(obj.GetEventHandle());
-  //}
-  return Wait(objects, all, waitMsMax);
-}
 }
