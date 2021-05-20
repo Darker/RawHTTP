@@ -1,4 +1,4 @@
-#include "WinEventWaitObject.h"
+#include "windows/threading/WinEventWaitObject.h"
 #include "../util/ErrorHelpers.h"
 
 namespace RawHttp
@@ -16,8 +16,8 @@ IWaitObject::WaitResult WinEventWaitObject::WaitFor(const ArrayView<IWaitObject*
 
   std::vector<HANDLE> handles;
   objects.Map<HANDLE>(handles, [](IWaitObject* obj) { return static_cast<WinEventWaitObject*>(obj)->GetEventHandle(); });
-  const DWORD result = WaitForMultipleObjects(handles.size(), handles.data(), all, timeout.ToMilliSeconds());
-  if (result >= MinSuccessIndex && result <= MaxSuccessIndex)
+  const DWORD result = WaitForMultipleObjects((DWORD)handles.size(), handles.data(), all, (DWORD)timeout.ToMilliSeconds());
+  if (result >= MinSuccessIndex && result < MaxSuccessIndex)
   {
     const size_t index = result - MinSuccessIndex;
     return { WaitResultStatus::Success, objects[index], index };

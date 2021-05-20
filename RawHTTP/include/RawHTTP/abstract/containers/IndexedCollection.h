@@ -63,12 +63,12 @@ public:
 
   /* for( : ) methods */
   Iterator<true> begin() const { return Iterator<true>(*this, 0); }
-  Iterator<true> end() const { return Iterator<true>(*this, GetLength() - 1); }
+  Iterator<true> end() const { return Iterator<true>(*this, GetLength()); }
   //! Only enabled if this is not a const view
   template <bool is_non_const = !is_const>
   Iterator<false> begin(typename std::enable_if <(is_non_const), int>::type*v=nullptr) { return Iterator<false>(*this, 0); }
   template <bool is_non_const = !is_const>
-  Iterator<false> end(typename std::enable_if <(is_non_const), int>::type*v = nullptr) { return Iterator<false>(*this, GetLength() - 1); }
+  Iterator<false> end(typename std::enable_if <(is_non_const), int>::type*v = nullptr) { return Iterator<false>(*this, GetLength()); }
 protected:
   //! Called from the non-virtual operator, which is only available when the template is set to non const mode
   virtual TValue& GetNonConst(size_t index) = 0;

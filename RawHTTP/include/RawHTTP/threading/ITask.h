@@ -1,8 +1,8 @@
 #pragma once
-#include "IEventLoop.h"
+
 namespace RawHttp
 {
-
+class IEventLoop;
 class ITask
 {
 public:

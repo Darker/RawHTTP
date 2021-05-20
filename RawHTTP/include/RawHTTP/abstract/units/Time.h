@@ -16,7 +16,14 @@ public:
   static constexpr TimeInterval FromMicroSeconds(TimeNumType us) { return TimeInterval{ us }; }
   static constexpr TimeInterval FromMilliSeconds(TimeNumType ms) { return TimeInterval{ ms*DurationMilliSecond }; }
   static constexpr TimeInterval FromSeconds(TimeNumType s) { return TimeInterval{ s*DurationSecond }; }
-
+  static constexpr TimeInterval FromMinutes(TimeNumType min) { return TimeInterval{ min*DurationMinute }; }
+  /*!
+   *  Converts the time to number of 100ns intervals.
+   *
+   *      @return 
+   */
+  constexpr TimeNumType To100sOfNanoSeconds() const { return _microSeconds * 10; }
+  constexpr TimeNumType ToMicroSeconds() const { return _microSeconds; }
   constexpr double ToMilliSeconds() const { return _microSeconds / 1000.0; }
   constexpr double ToSeconds() const { return _microSeconds / 1000000.0; }
 private:
@@ -44,6 +51,6 @@ namespace Units
 constexpr TimeInterval operator"" _us(TimeInterval::TimeNumType microSeconds) { return TimeInterval::FromMicroSeconds(microSeconds); }
 constexpr TimeInterval operator"" _ms(TimeInterval::TimeNumType milliSeconds) { return TimeInterval::FromMilliSeconds(milliSeconds); }
 constexpr TimeInterval operator"" _s(TimeInterval::TimeNumType seconds) { return TimeInterval::FromSeconds(seconds); }
-
+constexpr TimeInterval operator"" _minutes(TimeInterval::TimeNumType minutes) { return TimeInterval::FromMinutes(minutes); }
 }
 }

@@ -68,10 +68,11 @@ void SetAnyArray(ArrayViewImpl<TIterable, TValue, false> iterable, const TValue&
   }
 }
 
-int main()
+int maiAAn()
 {
   std::vector<int> test1{ 3,4,6,323,54,43,76 };
   PrintAnyArray<std::vector<int>, int>(test1);
   SetAnyArray<std::vector<int>, int>(test1, 15);
   PrintAnyArray<std::vector<int>, int>(test1);
+  return 0;
 }

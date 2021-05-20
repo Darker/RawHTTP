@@ -79,17 +79,17 @@
 //  return 0;
 //}
 
-cout << R"(<?xml version="1.0"encoding=\"ISO-8859-1"\?>)" << endl;
-cout << R"(<results>)" << endl;
-cout << R"(  <row>)" << endl;
-
-for (int i = 0; i < items.size(); i++)
-{
-  if (i % 3 == 0 && i != 0)
-  {
-    cout << "  </row>\n  <row>\n";
-  }
-  cout << R"(    <field>)" << items[i] << R"(</field>)" << endl;
-}
-cout << R"(  </row>)" << endl;
-cout << R"(</results>)" << endl;
+//cout << R"(<?xml version="1.0"encoding=\"ISO-8859-1"\?>)" << endl;
+//cout << R"(<results>)" << endl;
+//cout << R"(  <row>)" << endl;
+//
+//for (int i = 0; i < items.size(); i++)
+//{
+//  if (i % 3 == 0 && i != 0)
+//  {
+//    cout << "  </row>\n  <row>\n";
+//  }
+//  cout << R"(    <field>)" << items[i] << R"(</field>)" << endl;
+//}
+//cout << R"(  </row>)" << endl;
+//cout << R"(</results>)" << endl;

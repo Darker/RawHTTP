@@ -1,5 +1,5 @@
 #include "windows/threading/WindowsEventLoop.h"
-#include "WinEventWaitObject.h"
+#include "windows/threading/WinEventWaitObject.h"
 
 #include <vector>
 

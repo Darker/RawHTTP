@@ -69,7 +69,7 @@ void PrintAnyArray(IterableImpl<TIterable, TValue> iterable)
   PrintAnyArrayAbstract(iterable);
 }
 
-int main()
+int mAain()
 {
   const char* testStr = "StackOverflow";
   std::cout << "Chars of string:\r\n";
@@ -78,6 +78,7 @@ int main()
   std::vector<int> numbers = { 1,2,3,4,5 };
   std::cout << "Numbers: \r\n";
   PrintAnyArray<std::vector<int>, int>(numbers);
+  return 0;
 }
 
 

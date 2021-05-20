@@ -49,6 +49,15 @@
     <Filter Include="include\abstract\callbacks">
       <UniqueIdentifier>{72512a1f-161f-449c-bc67-0e06ecca1fff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\windows\threading\waitObjects">
+      <UniqueIdentifier>{a0b53eaf-9535-48e6-8efd-59b657e6ef14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\windows\threading\waitObjects">
+      <UniqueIdentifier>{805fcb68-86b5-4f1a-8802-7786a44cbc91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\windows\util">
+      <UniqueIdentifier>{3cc8d220-c960-4a8c-83d5-848747210eb9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="../src/RawHTTP.cpp">
@@ -69,6 +78,13 @@
     <ClCompile Include="..\src\windows\threading\WinEventWaitObject.cpp">
       <Filter>src\windows\threading</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\windows\threading\waitObjects\WindowsTimer.cpp">
+      <Filter>src\windows\threading\waitObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\windows\util\ErrorHelpers.cpp">
+      <Filter>src\windows\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\RawHTTP\windows\threading\waitObjects\AsyncReadFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\RawHTTP\IHttpHeader.h">
@@ -122,17 +138,11 @@
     <ClInclude Include="..\include\RawHTTP\abstract\containers\IndexedCollection.h">
       <Filter>include\abstract\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\RawHTTP\datatypes\Time.h">
-      <Filter>include\datatypes</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\RawHTTP\threading\IWaitObject.h">
       <Filter>include\threading</Filter>
     </ClInclude>
     <ClInclude Include="..\include\RawHTTP\abstract\units\Time.h">
       <Filter>include\abstract\units</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\windows\threading\WinEventWaitObject.h">
-      <Filter>src\windows\threading</Filter>
     </ClInclude>
     <ClInclude Include="..\include\RawHTTP\abstract\containers\BasicIterator.h">
       <Filter>include\abstract\containers</Filter>
@@ -142,6 +152,24 @@
     </ClInclude>
     <ClInclude Include="..\include\RawHTTP\abstract\callbacks\ItemCallbacks.h">
       <Filter>include\abstract\callbacks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\windows\WindowsTypes.h">
+      <Filter>include\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\windows\threading\WinEventWaitObject.h">
+      <Filter>include\windows\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\windows\threading\waitObjects\WindowsTimer.h">
+      <Filter>include\windows\threading\waitObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\abstract\containers\IndexedTraitDefs.h">
+      <Filter>include\abstract\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\windows\util\ErrorHelpers.h">
+      <Filter>src\windows\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RawHTTP\windows\threading\waitObjects\AsyncReadFile.h">
+      <Filter>include\windows\threading\waitObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
