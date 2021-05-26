@@ -8,10 +8,10 @@ struct AsyncReadFile::Private
   HANDLE openFile = Win::Null;
 };
 AsyncReadFile::AsyncReadFile(const std::wstring& name, size_t start, size_t length) 
-  : _name(name)
+  : _private(new Private)
   , _start(start)
   , _length(length)
-  , _private(new Private)
+  , _name(name)
 {
   //BOOL ReadFile(
   //  HANDLE       hFile,

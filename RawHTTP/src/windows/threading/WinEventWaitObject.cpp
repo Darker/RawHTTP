@@ -3,6 +3,11 @@
 
 namespace RawHttp
 {
+
+WinEventWaitObject::~WinEventWaitObject()
+{}
+
+
 /**
  * @param objects
  * @param all

@@ -13,6 +13,7 @@ class AsyncReadFile : public WinEventWaitObject
 public:
   AsyncReadFile(const std::wstring& name, size_t start, size_t length);
   bool Start();
+  virtual Win::Handle GetEventHandle() const;
 private:
   struct Private;
   std::unique_ptr<Private> _private;

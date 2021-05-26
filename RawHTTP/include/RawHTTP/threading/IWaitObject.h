@@ -39,6 +39,8 @@ public:
     size_t completedIndex;
   };
 
+  virtual ~IWaitObject() = 0;
+
   //! Wait for all given objects. These objects MUST be of the same type as this object. This object may or may not be in the wait list
   virtual WaitResult WaitFor(const ArrayView<IWaitObject*, false>& objects, bool all, TimeInterval timeout, bool noExceptions = false) = 0;
   //! Provides string object type. Object types with the same type are compatible and can wait within the same thread
@@ -46,5 +48,6 @@ public:
 
 };
 
+IWaitObject::~IWaitObject() { }
 
 }

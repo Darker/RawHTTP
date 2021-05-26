@@ -14,13 +14,8 @@ namespace RawHttp
 class WinEventWaitObject : public IWaitObject
 {
 public:
-  //enum class WinWaitStatus : size_t
-  //{
-  //  Timeout = WAIT_TIMEOUT,
-  //  Failed = WAIT_FAILED,
-  //  Success = WAIT_OBJECT_0,
-  //  Abandoned = WAIT_ABANDONED_0,
-  //};
+  //! Virtual destructor to allow destruction via IWaitObject*
+  virtual ~WinEventWaitObject();
 
   //! Wait for this and all given objects. These objects MUST be of the same type
   virtual WaitResult WaitFor(const ArrayView<IWaitObject*, false>& objects, bool all, TimeInterval timeout, bool noExceptions = false);

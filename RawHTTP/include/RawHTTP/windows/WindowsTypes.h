@@ -10,8 +10,8 @@ namespace Win
 using Bool = BOOL;
 using Handle = HANDLE;
 using Dword = DWORD;
-constexpr Handle Null = NULL;
-constexpr Handle InvalidHandle = INVALID_HANDLE_VALUE;
+constexpr const Handle Null = NULL;
+constexpr const Handle InvalidHandle = static_cast<Handle>(INVALID_HANDLE_VALUE);
 }
 }
 #else
@@ -23,8 +23,8 @@ namespace Win
 using Bool = bool;
 using Handle = void *;
 using Dword = unsigned long;
-constexpr Handle Null = nullptr;
-constexpr Handle InvalidHandle = (Handle)(long long)-1;
+constexpr const Handle Null = nullptr;
+constexpr const Handle InvalidHandle = (Handle)(long long)-1;
 }
 }
 #endif //_WIN32
